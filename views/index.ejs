@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title>Drift</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script type="text/javascript" src="/javascripts/angular/app.js"></script>
+
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+  <% if (isLoggedIn) { %>
+  <div class="top-user-bar">
+  <div class="portrait">
+    <img src="<%= user.portrait %>">
+  </div>
+  <div class="welcome">
+    Hello, <%= user.displayName %>!
+  </div>
+  <div class="logout-button"><a href="/user/logout"><p class="logout">Sign out</p></a></div>
+   </div>
+  <% } else { %>
+  <div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
+  <% } %>
+  <div ng-app="driftApp">
+    <div class="main-div" ng-controller="mainController">
+        <form id="form-tag-id" novalidate>
+          <p class="text-form">I am {{name}}
+          <div class="green-color">
+            Name:
+            <input placeholder="" class="input-amount" type="text" data-ng-model="name">
+          </div>
+        </form>
+      <div >
+        <p></p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
 </html>
