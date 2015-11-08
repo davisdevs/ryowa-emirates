@@ -1,13 +1,17 @@
-var app = angular.module("dataView",[]);
-app.controller("itemCtrl", function ($scope) {
-               $scope.categories = [
-                   { name: "Food" },
-                   { name: "Concerts" },
-                   { name: "Performing Arts"},
-                   { name: "Fashion" },
-                   { name: "Sports" },
-                   { name: "Technology" },
-                   { name: "Outdoors" },            
-               ];
-           })
+/*jslint white:true */
+/*global angular */
+
+var app = angular.module("myApp", []);
+app.controller("ItemCtrl", function ($scope) {
+	"use strict";
+    $scope.categories = [
+		{ name: "Arts & Architecture" },
+		{ name: "Food" },
+		{ name: "Culture" },
+		{ name: "Fashion"},
+		{ name: "Technology"},
+		{ name: "how are you"}
+    ];
+});
+
               
