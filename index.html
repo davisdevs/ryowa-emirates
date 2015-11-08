@@ -33,7 +33,9 @@
         <header>
             <div class="container">
                 <div class="intro-text">
-                    <p class="header"> What events and activities are you interested in?
+                    <p class="header"> What are you <p>
+                    <p class="header"> PASSIONATE <p>
+                    <p class="header"> about? <p>
                     </p>
                     
                 </div>
@@ -48,7 +50,7 @@
 		<div class="main_block" align="center" ng-controller="ItemCtrl">		
 			
             <div ng-repeat="category in categories" class="category">
-                <div class="darken" ng-click="selected_cats($index)">
+                <div class="darken" ng-click="selected_cats($index)" ng-class="{'selected_darken':category.include}">
                     <img ng-src="{{category.path}}">
                 </div>
 			</div>
@@ -75,6 +77,7 @@
 
     </body>
 	
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
 

@@ -4,26 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-@font-face {
-    font-family: 'Avenir-light';
-    src: url("fonts/AvenirLTStd-Light.otf");
-}
-
-@font-face {
-    font-family: 'Avenir-regular';
-    src: url("fonts/AvenirLTStd-Heavy.otf");
-}
-
-@font-face {
-    font-family: 'Avenir-heavy';
-    src: url("AvenirLTStd-Heavy.otf");
-}
-
 body {
-    font-family: 'Avenir-light';
     margin: 0px;
     padding: 0px;
-    font-size: 20px;
+    font-size: 40px;
 }
 
 header {
@@ -36,13 +20,12 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    font-family: 'Avenir-light';
+    font: Lato;
 }
 
 header .intro-text {
-    padding-top: 150px;
-    padding-bottom: 100px;
-    font-family: 'Avenir-light';
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 .portfolio-item {
@@ -149,4 +132,19 @@ submit {
 .darken:hover img {
     opacity: 0.7;
             
+}
+
+.selected_darken img{
+    background: black;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    -webkit-transition: all 0.2s linear;
+       -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+    opacity: 0.3;
 }
