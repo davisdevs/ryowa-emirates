@@ -32,7 +32,7 @@ var categories = {
     "Trekking / Hiking","Wakeboarding","Wilderness Training","Wildlife Safaris",
     "Windsurfing & Kitesurfing","Zip-lining"]
   },
-  "Movie and Photography": {
+  "Movie & Photography": {
     "xola": ["Photography","Film Screening","Movie"]
   },
   "Summits": {
@@ -52,11 +52,38 @@ var categories = {
 
 module.exports = {
   // Returns an array containing all category names
-  getAllCategoryNames: function () {
+  getAllCategoryNames: function() {
     var array = [];
     for (var categoryName in categories) {
       array.push(categoryName)
     }
     return array;
+  },
+
+  getXolaSearchCategory: function(appCategory) {
+    console.log(appCategory);
+    if (categories[appCategory]) {
+      return categories[appCategory].xola
+    } else {
+      console.warn("getXolaSearchCategory failed: " + appCategory)
+    }
+  },
+
+  getStubhubSearchCategory: function(appCategory) {
+    if (categories[appCategory]) {
+      return categories[appCategory].stubhub;
+    } else {
+      console.warn("getStubhubSearchCategory failed: " + appCategory)
+    }
+  },
+
+  getAppCategory: function(searchCategory) {
+    for(appCategory in category) {
+      if (appCategory.stubhub === searchCategory || appCategory.xola === searchCategory) {
+        return appCategory;
+      } else {
+        console.warn("getAppCategory failed: " + searchCategory)
+      }
+    }
   }
 }

@@ -1,21 +1,35 @@
-<!doctype html>
+<!DOCTYPE>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>Drift</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
-    <script type="text/javascript" src="/javascripts/angular/app.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Drift</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Bootstrap 3-->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-  </head>
-  <body>
-  <% if (isLoggedIn) { %>
-  <div class="top-user-bar">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
+  <link href="/stylesheets/3-col-portfolio.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script type="text/javascript" src="/javascripts/angular/app.js"></script>
+  <script type="text/javascript" src="public/javascripts/angular/introview.js"></script>
+</head>
+<body>
+
+<!--<% if (isLoggedIn) { %>
+<div class="top-user-bar">
   <div class="portrait">
     <img src="<%= user.portrait %>">
   </div>
@@ -23,25 +37,164 @@
     Hello, <%= user.displayName %>!
   </div>
   <div class="logout-button"><a href="/user/logout"><p class="logout">Sign out</p></a></div>
-   </div>
-  <% } else { %>
-  <div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
-  <% } %>
-  <div ng-app="driftApp">
-    <div class="main-div" ng-controller="mainController">
-        <form id="form-tag-id" novalidate>
-          <p class="text-form">I am {{name}}
-          <div class="green-color">
-            Name:
-            <input placeholder="" class="input-amount" type="text" data-ng-model="name">
-          </div>
-        </form>
-      <div >
-        <p></p>
-      </div>
+</div>
+<% } else { %>
+<div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
+<% } %>-->
 
+  <!--<div class="main-div" ng-controller="MainController">
+    <form id="form-tag-id" novalidate>
+      <p class="text-form">I am {{name}}
+      <div class="green-color">
+        Name:
+        <input placeholder="" class="input-amount" type="text" data-ng-model="name">
+      </div>
+    </form>
+    <div >
+      <p></p>
     </div>
+
+  </div> -->
+<div ng-app="driftApp">
+
+  <div class="page-header">
+    <div class="drift-logo">
+      DRIFT
+    </div>
+    <div class="user-profile">profile</div>
+    <div class="drift-cart">cart</div>
   </div>
 
+
+  <!-- Prototype Nav Bar
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Drift</a>
+            </div>
+        </div>
+    </nav>
+  -->
+  <!-- Category view -->
+
+  <div id="page-top">
+  <!-- Page Header -->
+  <header>
+    <div class="container">
+      <div class="intro-text">
+        <p class="header"> What are you <p>
+        <p class="header"> PASSIONATE <p>
+        <p class="header"> about? <p>
+        </p>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Page Content -->
+  <!-- Categories Row View, display 4 max -->
+  <!-- Individual item template -->
+
+  <div class="main_block" align="center" ng-controller="ItemCtrl">
+
+    <div ng-repeat="category in categories" class="category">
+      <div class="darken" ng-click="selected_cats($index)" ng-class="{'selected_darken':category.include}">
+        <img ng-src="{{category.path}}">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Submit Button -->
+  <div class="submit" align="center" ng-click="next_button_click()">
+    <button type="submit" class="myButton" >     Next
+    </button>
+  </div>
+  <br>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="bottom">
+
+        <br>
+        <br>
+        <div align="center">
+          <p>Copyright &copy; Drift 2015</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+
+
+  <!-- Suggestions View -->
+
+  <div ng-controller="SuggestionsViewController as suggestionsCtrl" class="container-fluid suggestions-container">
+    <!-- Suggestions header -->
+    <div class="row suggestions-header">
+      <div class="tab-buttons-group">
+        <div class="all-button tab-button" ng-click="tabPressed(1)" ng-class="{'tab-selected': currentTab == 1}">Events and Activities</div>
+        <div class="events-button tab-button" ng-click="tabPressed(2)" ng-class="{'tab-selected': currentTab == 2}">Events</div>
+        <div class="activities-button tab-button" ng-click="tabPressed(3)" ng-class="{'tab-selected': currentTab == 3}">Activities</div>
+      </div>
+    </div>
+
+    <!-- Modal view -->
+    <div class="suggestion-container-scope" ng-controller="SuggestionsModalController">
+      <div class="suggestion-modal-container">
+        <div class="suggestion-modal-cross animated fadeInDown" ng-click="closeModal()" ng-show="isModalVisible">
+          <img src="../assets/modal-cross.png"/>
+        </div>
+        <div class="suggestion-modal animated fadeIn" ng-show="isModalVisible">
+          <img class="suggestion-modal-img" src="{{data.img}}"/>
+          <div class="suggestion-modal-content">
+            <h3><b>{{data.title}}</b></h3>
+            <h4>{{data.date}}</h4>
+            <img class="suggestion-modal-drift-button" ng-click="saveButtonClicked()" ng-src="{{driftSaveButtonUrl}}"/>
+            <p>{{data.text}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestion-modal-overlay animated fadeIn" ng-show="isModalVisible"></div>
+
+    <div class="row">
+      <!-- City nav bar -->
+      <div class="city-nav-bar">
+        <div ng-repeat="city in cities">
+          <div class="city-button">{{city}}</div>
+        </div>
+      </div>
+
+      <!-- Gallery-->
+      <div class="suggestion-gallery">
+
+        <div class="all-tab-content" ng-show="currentTab == 1">
+          <div ng-repeat="suggestion in suggestions" class="suggestion-element" ng-click="showModal(suggestion)" ng-style="{'background-image':'url({{suggestion.img}})', 'background-size': 'cover'}">
+            <img ng-show="suggestion" class="suggestion-element-drift" src="../assets/suggestion-element-drift.png"/>
+            <div class="suggestion-element-container">
+              <h4>{{suggestion.title}}</h4>
+              <h5>{{suggestion.date}}</h5>
+            </div>
+            <div class="suggestion-element-overlay"></div>
+          </div>
+        </div>
+        <div class="timed-tab-content" ng-show="currentTab == 2">
+          Timed tab content
+        </div>
+        <div class="free-tab-content" ng-show="currentTab == 3">
+          Free tab content
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
