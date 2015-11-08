@@ -6,23 +6,78 @@ var data = [
 	img: "https://rocktotick.com/wp-content/uploads/2015/02/Maroon-5-Bio.jpg"},
 	{title: "Avril Lavigne: What the F**K was I thinking?",
 		date: "22 Nov",
-		text: "Let Go made Lavigne the youngest female soloist to reach number 1 in the UK. As of 2013, it has sold nearly 7 million copies in the United States and over 16 million copies worldwide.[8][9] Her breakthrough single, "Complicated", peaked at number 1 in many countries around the world, as did the album Let Go. ",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://resources1.news.com.au/images/2013/05/02/1226632/958569-avril-lavigne.jpg"},
 	{title: "Kodaline: South East Asian Tour",
 		date: "03 Nov",
-		text: "Kodaline are an Irish rock band. Originally known as 21 Demands, in 2012 the band changed its name to Kodaline. Steve Garrigan and Mark Prendergast grew up in Swords, Dublin, and have known each other since childhood.",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://i.telegraph.co.uk/multimedia/archive/02473/kodaline_2473544b.jpg"},
 	{title: "Jay Chou",
 		date: "17 Nov",
-		text: "In 2000, Chou released his debut album, titled Jay (2000), under the record company Alfa Music. Since then his music has gained recognition throughout Asia, most notably in regions such as Taiwan, Mainland China, Hong Kong, Singapore, Malaysia, Indonesia, Korea, Japan and in the Asian communities of Western countries such as the United States and Australia.",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://i1213.photobucket.com/albums/cc478/Crazy4you93/jaychou.jpg"},
 	{title: "Sara Bareilles",
 		date: "24 Dec",
-		text: "Bareilles has sold over one million records and over seven million singles in the United States alone and has been nominated for a Grammy Award five times as well as earning a nomination for a Grammy Award for Album of the Year, considered by many to be the most prestigious award in the US music industry.",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://www.elliottbaybook.com/sites/elliottbaybook.com/files/sara-bareilles-2013-650-430.jpg"},
 	{title: "Linkin Park: Rage and War",
 		date: "28 Dec",
-		text: "Linkin Park is an American rock band from Agoura Hills, California. Formed in 1996, the band rose to international fame with their debut album Hybrid Theory, which was certified Diamond by the RIAA",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://static1.gamespot.com/uploads/original/1539/15391776/2550913-4650940812-linki.jpg"},
 	{title: "Lakers Game @ McGraw Sports Stadium",
 		date: "31 Dec",
@@ -41,11 +96,33 @@ var data = [
 		img: "http://cdnstatic.visualizeus.com/thumbs/a0/44/basketball,dunk,lakers,nba-a044ccfd2cebddbafb96e6861c845fbd_h.jpg"},
 	{title: "Manchester United vs. West Brom",
 		date: "Old Trafford Stadium",
-		text: "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that currently competes in the Premier League, the top flight of English football.",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://static01.nyt.com/images/2011/08/24/sports/soccer/24iht-soccer24/24iht-soccer24-articleLarge-v2.jpg"},
 	{title: "US Rugby Big League",
 		date: "1 Jan",
-		text: "USA Rugby (officially the United States of America Rugby Football Union, Ltd.) is the national governing body for the sport of rugby union in the United States. USA Rugby states its role as "the national governing body charged with achieving and maintaining high levels of quality in all aspects of rugby."[1] USA Rugby is responsible for the promotion and development of the sport in the U.S. and promotion of U.S. international participation.[2] USA Rugby is a member of World Rugby (WR) and a member of the United States Olympic Committee (USOC).",
+		text: "DescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription" +
+		"DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription",
 		img: "http://golivesportscast.com/wp-content/uploads/2015/08/USARugby.jpg"}
 ];
 
