@@ -22,19 +22,19 @@
 	    <!-- Page Header -->
         <header>
 			<div class="intro-text">
-				<h1 class="header"> Summary of Your Experiences</h1> 
+				<h1 class="header"> Summary of Your Experiences </h1> 
             </div>
         </header>
 			
 		<!-- Summary Section -->
 		<section ng-app="myApp">
-			<div id="wrapper" ng-controller="cityCtrl">
-				<div ng-repeat="city in cities">			
-					{{city.name}}, {{city.number}: {{city.flightCost}}
+			<div id="wrapper">
+				<div id="columns" ng-controller="cityCtrl">
+					<div ng-repeat="city in cities" ng-include="'../html/itemTemplate.html'">			
+					</div>
+					<script src="/js/angular.js"></script>
+					<script src="public/javascripts/angular/template.js"></script>
 				</div>
-
-				<script src="/js/angular.js"></script>
-				<script src="public/javascripts/template.js"></script>
 			</div>
 		</section>	
 		</div>

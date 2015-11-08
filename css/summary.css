@@ -1,25 +1,24 @@
 /* CSS Stylesheet for SummaryView */
 body {
     font-family: Avenir;
+	background-image: url(../images/scribble_light.png);
 }
 
 header .intro-text {
 	font-size: 30px;
 	text-align: center;
-	padding: 100px;
-	margin-top: 50px;
-	background-image: url("../images/Bridge-Hipster-Wallpaper.jpg"); 
-}
-
-body {
-	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+	padding: 70px;
+	margin-top: 30px;
+	background-color: orangered;
+	color: white;
+	width: auto;
 }
 
 #wrapper {
 	width: 90%;
-	max-width: 1100px;
-	min-width: 800px;
-	margin: 50px auto;
+	height: auto;
+	min-width: 1000px;
+	margin: 20px auto;
 }
 
 #columns {
@@ -33,7 +32,7 @@ body {
 	column-gap: 15px;
 	column-fill: auto;
 }
-/*
+
 .pin {
 	display: inline-block;
 	background: #FEFEFE;
@@ -41,7 +40,6 @@ body {
 	height: auto;
 	border: 2px solid #FAFAFA;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	margin: 0 2px 15px;
 	padding-bottom: 0px;
 	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
 	opacity: 1;
@@ -55,14 +53,11 @@ body {
 	position: relative;
 	max-width: 100%;
 	height: auto;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
 }
 
 .pin p {
 	position: absolute;
-	font: 12px/18px Avenir, sans-serif;
+	font: 10px/18px Avenir, sans-serif;
 	color: #333;
 }
 
@@ -73,20 +68,14 @@ body {
 		column-count: 3;
 	}
 }
-*/
 
 #columns:hover .pin:not(:hover) {
 	opacity: 0.4;
 }
 
 /* for itemTemplate */
-imgText {
-	position: relative;
-	width: 100%;
-}
-
 h2 {
-	position: absolute; 
+   position: absolute; 
    top: 200px; 
    left: 0; 
    width: 100%; 
@@ -99,4 +88,64 @@ h2 span {
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
    padding: 10px; 
+}
+
+/* for itemTemplate */
+container {
+	width: 100px;
+	height: 100px;
+}
+
+imgText {
+	position: relative;
+	width: 200px;
+	border: 1px; 
+	border-color: black;
+}
+
+div span { 
+   color: white; 
+   font: light 18px avenir; 
+   letter-spacing: 0px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+}
+
+div .span1 {
+   color: white; 
+   font: light 14px avenir;
+   letter-spacing: 1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+}
+
+div.item_wrapper {
+float: left; /* important */  
+position:relative; /* important(so we can absolutely position the description div */  
+width: 100%;
+height: auto;
+}  
+
+div#one {
+	left: 0;
+	bottom: 0;
+    position: absolute;
+    width: 50%;
+    height: auto;
+    background: rgba(0, 0, 0);
+    float: left;
+	font-size: 15px;
+	padding: 8px;
+}
+
+div#two {
+	text-align: right;
+	right: 0;
+	bottom: 0;
+	font-size: 18px;
+	padding: 8px;
+	position: absolute;
+    margin-left: 0%;
+    height: auto;
+    background: rgba(0, 0, 0);
 }
