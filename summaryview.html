@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome to Drift</title>
+		<!-- Bootstrap Core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom CSS -->
+		<link href="public/stylesheets/summary.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="background">
+		<!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Drift</a>
+                </div>
+            </div>
+        </nav>
+
+	    <!-- Page Header -->
+        <header>
+			<div class="intro-text">
+				<h1 class="header"> Summary of Your Experiences </h1> 
+            </div>
+        </header>
+			
+		<!-- Summary Section -->
+		<section ng-app="myApp">
+			<div id="wrapper">
+				<div id="columns" ng-controller="cityCtrl">
+					<div ng-repeat="city in cities">
+						<div class="pin">
+	<div class="item_wrapper">
+	<img ng-src="/images/{{city.img}}.png" style="width:100%; height:auto">
+	<section>
+	<div id="one">
+			<span> {{city.name}} </span><br>
+			<span> {{city.num}} </span>
+		</div>
+			<div id="two">
+			<span> {{city.pricing}} </span><br>
+		</div>
+		</section>
+	</div>
+</div>
+					</div>
+					<script src="/js/angular.js"></script>
+					<script src="/public/javascripts/angular/template.js"></script>
+				</div>
+			</div>
+		</section>	
+		</div>
+	</body>
+<script src="public/javascripts/angular/template.js"></script>
+</html>
