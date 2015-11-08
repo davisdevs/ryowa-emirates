@@ -5,7 +5,7 @@
 		<!-- Bootstrap Core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<!-- Custom CSS -->
-		<link href="css/summary.css" rel="stylesheet">
+		<link href="public/stylesheets/summary.css" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -30,10 +30,24 @@
 		<section ng-app="myApp">
 			<div id="wrapper">
 				<div id="columns" ng-controller="cityCtrl">
-					<div ng-repeat="city in cities" ng-include="'../html/itemTemplate.html'">			
+					<div ng-repeat="city in cities">
+						<div class="pin">
+	<div class="item_wrapper">
+	<img ng-src="/images/{{city.img}}.png" style="width:100%; height:auto">
+	<section>
+	<div id="one">
+			<span> {{city.name}} </span><br>
+			<span> {{city.num}} </span>
+		</div>
+			<div id="two">
+			<span> {{city.pricing}} </span><br>
+		</div>
+		</section>
+	</div>
+</div>
 					</div>
 					<script src="/js/angular.js"></script>
-					<script src="public/javascripts/angular/template.js"></script>
+					<script src="/public/javascripts/angular/template.js"></script>
 				</div>
 			</div>
 		</section>	
