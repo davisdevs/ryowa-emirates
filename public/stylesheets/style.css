@@ -2,8 +2,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+a, a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .header-container {
@@ -34,7 +35,6 @@ a {
   display: inline-block;
   width: 50px;
   padding: 13px 10px 10px 26px;
-  vertical-align: middle;
 }
 
 .drift-cart {
