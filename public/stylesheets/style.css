@@ -111,21 +111,60 @@ a {
   overflow: auto;
 }
 
+.suggestion-element-overlay {
+  background: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 .suggestion-element {
-  background: grey;
   border: 0px;
   height: 350px;
   position: relative;
   float:left;
   width: 33.3%;
-  border: 1px solid darkgrey;
+}
+
+.suggestion-element-drift {
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 50px;
+  width: 45px;
+}
+
+.suggestion-element-overlay:hover {
+  opacity: 0.5;
+}
+.suggestion-element-container {
+  background: rgba(255,255,255, 0.3);
+  color: black;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
 }
 .suggestion-gallery {
   width: 95%
   position: relative;
   display: inline;
 }
-
+/*
+.suggestion-modal-cross, .suggestion.modal, .suggestion-modal-content, .suggestion-modal-img{
+  -webkit-animation-name: viewfadein;
+  -moz-animation: viewfadein;
+  -o-animation: viewfadein;
+  animation-name: viewfadein;
+  -webkit-animation-duration: 0.7s;
+  -moz-animation-duration: 0.7s;
+  -o-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+*/
 .suggestion-modal {
   position: fixed;
   top: 50%;
@@ -142,7 +181,7 @@ a {
 
 }
 
-.suggestion-modal img{
+.suggestion-modal-img{
   position: absolute;
   display: block;
   top: 20px;
@@ -153,6 +192,14 @@ a {
 
 }
 
+.suggestion-modal-drift-button {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  height: 50px;
+  width: 40px;
+}
+
 .suggestion-modal-content {
   position: absolute;
   top: 310px;
@@ -160,6 +207,15 @@ a {
   width: 550px;
   margin: 0 25px;
   word-wrap: break-word;
+}
+
+.suggestion-modal-content h3 {
+  width: 530px;
+}
+.suggestion-modal-content p{
+  height: 180px;
+  width: 550px;
+  overflow:  scroll;
 }
 
 .suggestion-modal-cross {
@@ -186,7 +242,15 @@ a {
   z-index: 1;
 }
 
-@keyframes fade-in{
+.suggestion-modal-fadeout.ng-leave {
+  transition:0.5s linear all;
+  opacity:1;
+}
+.suggestion-modal-fadeout.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+@keyframes viewfadein{
   from{
     opacity:0;
   }
@@ -196,17 +260,19 @@ a {
   }
 }
 
-@keyframes fade-out{
-  from{
-    background-color: rgba(0,0,0,0.88);
-    /* Override content view opacity */
-    opacity:1.0;
-  }
 
-  to{
-    background-color: rgba(0,0,0,0);
-    opacity:0;
-  }
+.fadeOut.ng-hide {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
 }
 
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

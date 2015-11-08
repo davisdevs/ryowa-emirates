@@ -16,9 +16,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
   <script type="text/javascript" src="/javascripts/angular/app.js"></script>
 
@@ -73,20 +75,23 @@
     </div>
 
     <!-- Modal view -->
-    <div class="suggestion-modal-container" ng-controller="SuggestionsModalController">
-      <div class="suggestion-modal-cross" ng-click="closeModal()" ng-show="isModalVisible" ng-class="{'fade-in': isModalVisible}">
-        <img src="../assets/modal-cross.png"/>
-      </div>
-      <div class="suggestion-modal" ng-show="isModalVisible" ng-class="{'fade-in': isModalVisible}">
-        <img src="{{data.img}}"/>
-        <div class="suggestion-modal-content">
-          <h2><b>{{data.title}}</b></h2>
-          <h4>{{data.date}}</h4>
-          <p>{{data.text}}</p>
+    <div class="suggestion-container-scope" ng-controller="SuggestionsModalController">
+      <div class="suggestion-modal-container">
+        <div class="suggestion-modal-cross animated fadeInDown" ng-click="closeModal()" ng-show="isModalVisible">
+          <img src="../assets/modal-cross.png"/>
+        </div>
+        <div class="suggestion-modal animated fadeIn" ng-show="isModalVisible">
+          <img class="suggestion-modal-img" src="{{data.img}}"/>
+          <div class="suggestion-modal-content">
+            <h3><b>{{data.title}}</b></h3>
+            <h4>{{data.date}}</h4>
+            <img class="suggestion-modal-drift-button" ng-click="saveButtonClicked()" ng-src="{{driftSaveButtonUrl}}"/>
+            <p>{{data.text}}</p>
+          </div>
         </div>
       </div>
 
-      <div class="suggestion-modal-overlay" ng-show="isModalVisible" ng-class="{'fade-in': isModalVisible}"></div>
+      <div class="suggestion-modal-overlay animated fadeIn" ng-show="isModalVisible"></div>
 
     <div class="row">
       <!-- City nav bar -->
@@ -100,32 +105,13 @@
       <div class="suggestion-gallery">
 
         <div class="all-tab-content" ng-show="currentTab == 1">
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
-          </div>
-          <div class="suggestion-element" ng-click="showModal()">
-
+          <div ng-repeat="suggestion in suggestions" class="suggestion-element" ng-click="showModal(suggestion)" ng-style="{'background-image':'url({{suggestion.img}})', 'background-size': 'cover'}">
+            <img ng-show="suggestion" class="suggestion-element-drift" src="../assets/suggestion-element-drift.png"/>
+            <div class="suggestion-element-container">
+              <h4>{{suggestion.title}}</h4>
+              <h5>{{suggestion.date}}</h5>
+            </div>
+            <div class="suggestion-element-overlay"></div>
           </div>
         </div>
         <div class="timed-tab-content" ng-show="currentTab == 2">
