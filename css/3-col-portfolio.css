@@ -45,13 +45,13 @@ submit {
     color: white;
 }
 
-
 .image {
     background: url('http://www.adweek.com/socialtimes/files/2013/07/sports-balls.png');
     width: 100px;
     height: 200px;
     position:relative;
 }
+
 .image:hover > .overlay {
     width:100%;
     height:100%;
@@ -60,3 +60,4 @@ submit {
     opacity:0.5;
     transition: all 0.2s;
 }
+
