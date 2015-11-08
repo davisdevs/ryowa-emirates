@@ -4,11 +4,6 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
-    margin: 0px;
-    padding: 0px;
-    font-size: 40px;
-}
 
 header {
     text-align: center;
@@ -24,8 +19,9 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
+    font-size: 40px;
 }
 
 .portfolio-item {

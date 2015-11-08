@@ -245,3 +245,89 @@ app.controller('SuggestionsViewController', ['$scope', function($scope){
 
 }]);
 
+app.controller("ItemCtrl", function ($scope, $http) {
+	"use strict";
+	$http.get("http://localhost:3000/api/events/categories")
+		.success(function(response) {
+			console.log(response);
+		})
+	$scope.categories = [
+		{
+			name: "Food",
+			path: "../assets/Food.jpg",
+			include: false
+		},
+		{
+			name: "Live Sports",
+			path: "../assets/Live Sports.jpg",
+			include: false
+		},
+		{
+			name: "Festival",
+			path: "../assets/Festival.jpg",
+			include: false
+		},
+		{
+			name: "Outdoors & Nature",
+			path: "../assets/Outdoors & Nature.jpg",
+			include: false
+		},
+		{
+			name: "Concerts",
+			path: "../assets/Concerts.jpg",
+			include: false
+		},
+		{
+			name: "Arts & Architecture",
+			path: "../assets/Arts & Architecture.jpg",
+			include: false
+		},
+		{
+			name: "Summits",
+			path: "../assets/Summits.jpg",
+			include: false
+		},
+		{
+			name: "Culture & History",
+			path: "../assets/Culture & History.jpg",
+			include: false
+		},
+		{
+			name: "Movie & Photography",
+			path: "../assets/Movie & Photography.jpg",
+			include: false
+		},
+		{
+			name: "Theatre & Comedy",
+			path: "../assets/Theatre & Comedy.jpg",
+			include: false
+		},
+		{
+			name: "Volunteering",
+			path: "../assets/Volunteering.jpg",
+			include: false
+		},
+		{
+			name: "Walking Tours",
+			path: "../assets/Walking Tours.jpg",
+			include: false
+		}
+	];
+
+	$scope.selected_cats = function(index) {
+		if($scope.categories[index].include === false){
+			$scope.categories[index].include = true;
+		}
+		else{
+			$scope.categories[index].include = false;
+		};
+	};
+
+	$scope.next_button_click = function() {
+		$http.get("http://localhost:3000/api/events/categories")
+			.success(function(response) {
+				console.log(response);
+			})
+	};
+
+});
