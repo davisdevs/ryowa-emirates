@@ -12,7 +12,7 @@ body {
 
 header {
     text-align: center;
-    background-color: orangered; color: white;
+    background-color: #ed6201; color: white;
     background-attachment: scroll;
     background-position: center center;
     background-repeat: none;
@@ -24,7 +24,7 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 
@@ -36,7 +36,7 @@ footer {
     padding: 50px;
     color: white;
     font-size: 24px;
-    background-color: orangered;
+    background-color: #ed6201;
     text-align: center;
 }
 
@@ -47,10 +47,14 @@ submit {
 
 
 .image {
-    background: url('http://www.adweek.com/socialtimes/files/2013/07/sports-balls.png');
-    width: 100px;
-    height: 200px;
+    background: url('../images/food.jpg');
+    width: 25%;
+    height: 575px;
     position:relative;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    display: inline-block;
 }
 .image:hover > .overlay {
     width:100%;
@@ -59,4 +63,33 @@ submit {
     background-color:#000;
     opacity:0.5;
     transition: all 0.2s;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.myButton {
+    -moz-box-shadow:inset 0px 1px 0px 0px #cf866c;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #cf866c;
+    box-shadow:inset 0px 1px 0px 0px #cf866c;
+    background-color:#e34a20;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #942911;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    padding:8px 40px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #854629;
+}
+.myButton:hover {
+    background-color:orangered;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
 }
