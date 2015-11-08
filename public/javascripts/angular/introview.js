@@ -4,7 +4,7 @@
 var app = angular.module("myApp", []);
 app.controller("ItemCtrl", function ($scope, $http) {
 	"use strict";
-	$http.get("http://localhost:3000/events/categories")
+	$http.get("http://localhost:3000/api/events/categories")
 	.success(function(response) {
 		console.log(response);
 	})
@@ -25,7 +25,7 @@ app.controller("ItemCtrl", function ($scope, $http) {
 			include: false
 		},
 		{ 
-			name: "Outdoor & Nature",
+			name: "Outdoors & Nature",
 			path: "images/Outdoors & Nature.jpg",
 			include: false
 		},
@@ -81,10 +81,11 @@ app.controller("ItemCtrl", function ($scope, $http) {
     };
 
     $scope.next_button_click = function() {
-		$http.get("http://localhost:3000/events/categories")
+		$http.get("http://localhost:3000/api/events/categories")
 		.success(function(response) {
 		console.log(response);
-    })
+    	})
+	};
 
 });
 
