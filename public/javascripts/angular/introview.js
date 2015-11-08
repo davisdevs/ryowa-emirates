@@ -71,7 +71,7 @@ app.controller("ItemCtrl", function ($scope, $http) {
 		}
     ];
 
-    $scope.clicked = function(index) {
+    $scope.selected_cats = function(index) {
     	if($scope.categories[index].include === false){
     		$scope.categories[index].include = true;
     	}
@@ -79,6 +79,12 @@ app.controller("ItemCtrl", function ($scope, $http) {
     		$scope.categories[index].include = false;    		
     	};
     };
+
+    $scope.next_button_click = function() {
+		$http.get("http://localhost:3000/events/categories")
+		.success(function(response) {
+		console.log(response);
+    })
 
 });
 
