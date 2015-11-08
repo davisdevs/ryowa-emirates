@@ -15,9 +15,6 @@ var config = require("./config/config");
 var app = express();
 var db = mongoose();
 
-var api = require('./routes/api')
-var routes = require('./routes/index')
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -38,23 +35,18 @@ app.set('views', __dirname + '/views');
 // locate files in /public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', api);
-
-app.use('/', routes);
-
-// Logic to authenticate user
-// app.get("/", function(req, res) {
-//   if (req.user) {
-//     req.session.isLoggedIn = true;
-//   } else {
-//     req.session.isLoggedIn = false;
-//   }
-//   res.render('index', {
-//     isLoggedIn: req.session.isLoggedIn,
-//     // user data object
-//     user: (req.session.isLoggedIn) ? req.user : null
-//   })
-// });
+app.get("/", function(req, res) {
+  if (req.user) {
+    req.session.isLoggedIn = true;
+  } else {
+    req.session.isLoggedIn = false;
+  }
+  res.render('index', {
+    isLoggedIn: req.session.isLoggedIn,
+    // user data object
+    user: (req.session.isLoggedIn) ? req.user : null
+  })
+});
 
 //
 // // redirects invalid path to home page
