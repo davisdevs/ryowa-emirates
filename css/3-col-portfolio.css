@@ -1,0 +1,43 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    font-family: Avenir;
+}
+
+header {
+    text-align: center;
+    background-color: orangered; color: white;
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: avenir;
+}
+
+header .intro-text {
+    padding: 150px;
+}
+
+.portfolio-item {
+    margin-bottom: 10px;
+  
+}
+
+footer {
+    margin: 100px;
+    color: black;
+    text-align: center;
+}
+
+submit {
+    margin: 50px;
+    text-align: center;
+    color: black;
+}
