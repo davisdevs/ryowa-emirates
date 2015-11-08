@@ -33,7 +33,9 @@
         <header>
             <div class="container">
                 <div class="intro-text">
-                    <p class="header"> What events and activities are you interested in?
+                    <p class="header"> What are you <p>
+                    <p class="header"> PASSIONATE <p>
+                    <p class="header"> about? <p>
                     </p>
                     
                 </div>
@@ -48,22 +50,24 @@
 		<div class="main_block" align="center" ng-controller="ItemCtrl">		
 			
             <div ng-repeat="category in categories" class="category">
-                <div class="darken" ng-click="selected_cats($index)">
+                <div class="darken" ng-click="selected_cats($index)" ng-class="{'selected_darken':category.include}">
                     <img ng-src="{{category.path}}">
                 </div>
 			</div>
 
 		</div>
 
+        <!-- Submit Button -->
+                    <div class="submit" align="center" ng-click="next_button_click()">
+                        <button type="submit" class="myButton" >     Next
+                        </button>
+                    </div>
+                    <br>
         <!-- Footer -->
         <footer>
             <div class="container">
                 <div class="bottom">
-                    <!-- Submit Button -->
-                    <div class="submit" ng-click="next_button_click()">
-                        <button type="submit" class="myButton" >     Next
-                        </button>
-                    </div>
+                    
                     <br>
                     <br>
                     <div align="center">
@@ -75,6 +79,7 @@
 
     </body>
 	
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -83,7 +88,7 @@
     
     <!-- todo: put all script files locally -->
     <!-- Angular.js -->
-    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>5<script src="app.js"></script>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script><script src="app.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="public/javascripts/angular/introview.js"></script>
 </html>
