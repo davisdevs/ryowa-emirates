@@ -1,5 +1,4 @@
-/* CSS Stylesheet for SummaryView */
-body {
+/* CSS Stylesheet for SummaryView */  /*body {
     font-family: Avenir;
 	background-image: url(/images/scribble_light.png);
 }
@@ -12,7 +11,7 @@ header .intro-text {
 	background-color: #ec5e2f;
 	color: white;
 	width: auto;
-}
+}*/
 
 #wrapper {
 	width: 90%;

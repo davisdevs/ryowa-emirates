@@ -22,6 +22,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
   <link href="/stylesheets/3-col-portfolio.css" rel="stylesheet">
+  <link href="/stylesheets/summary.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
@@ -29,6 +30,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
   <script type="text/javascript" src="/javascripts/angular/app.js"></script>
   <script type="text/javascript" src="public/javascripts/angular/introview.js"></script>
+
 </head>
 <body>
 
@@ -175,6 +177,29 @@
   </div>
 </div>
 </body>
+
+<!-- Summary View -->
+
+<div id="wrapper">
+  <div id="columns" ng-controller="cityController">
+    <div ng-repeat="city in cities">
+      <div class="pin">
+        <div class="item_wrapper">
+          <img ng-src="/images/{{city.img}}.png" style="width:100%; height:auto">
+          <section>
+            <div id="one">
+              <span> {{city.name}} </span><br>
+              <span> {{city.num}} </span>
+            </div>
+            <div id="two">
+              <span> {{city.pricing}} </span><br>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer>
