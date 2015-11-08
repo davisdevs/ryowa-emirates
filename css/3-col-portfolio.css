@@ -1,0 +1,62 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    font-family: Avenir;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    text-align: center;
+    background-color: orangered; color: white;
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: avenir;
+}
+
+header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.portfolio-item {
+    margin-bottom: 0px;
+}
+
+footer {
+    padding: 50px;
+    color: white;
+    font-size: 24px;
+    background-color: orangered;
+    text-align: center;
+}
+
+submit {
+    background-color: orangered;
+    color: white;
+}
+
+
+.image {
+    background: url('http://www.adweek.com/socialtimes/files/2013/07/sports-balls.png');
+    width: 100px;
+    height: 200px;
+    position:relative;
+}
+.image:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    transition: all 0.2s;
+}
