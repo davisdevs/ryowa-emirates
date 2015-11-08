@@ -14,7 +14,7 @@ module.exports = {
       api_key: "mygUAFiMlWVzVEwFH4dxZP0ZDWjGd6o6gjH3X2CVFIM"
     },
     stubhub: {
-      url: "https:api.stubhub.com",
+      url: "https://api.stubhub.com",
       api_key: "WS7ummfbl6TbvXba1bb8R4ABglsa"
     },
     googleGeocoder: {

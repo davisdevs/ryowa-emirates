@@ -69,33 +69,31 @@ var searchXola = function(categoryArray) {
             //swap out cause reverse geocoding is removed
             // if (event.complete === true && countryCode === "US") {
             if (event.complete === true) {
-              resultsArray.push(JSON.stringify(
-                {provider: "xola",
-                  id: event.id,
-                  category: event.category, //original xola category TODO: Implement lookup in category (interest) module
-                  title: event.name,
-                  image: xola.url+event.photo.src,
-                  date: "range",
-                  price: event.price,
-                  url: "",
-                  excerpt: event.excerpt,
-                  description: event.desc,
-                  city: city }))
-              console.log(resultsArray);
+              resultsArray.push({"provider": "xola",
+              id: event.id,
+              category: event.category, //original xola category TODO: Implement lookup in category (interest) module
+              title: event.name,
+              image: xola.url+event.photo.src,
+              date: "range",
+              price: event.price,
+              url: "",
+              excerpt: event.excerpt,
+              description: event.desc,
+              city: city })
 
             }
           }
         }
-        results = JSON.stringify(resultsArray)
-        console.log(resultsArray.length);
-        resolve(resultsArray);
       }
+      console.log(resultsArray.length);
+      resolve(resultsArray);
     })
   })
 }
 
 var searchStubhub = function(categoryArray) {
-  var results = []
+  var promises = [];
+  var results =[];
   var query = "";
   var idArray = []
   var id;
@@ -109,17 +107,20 @@ var searchStubhub = function(categoryArray) {
     }
   }
   console.log("Searching sh: " + idArray);
-  return new Promise(function(resolve, reject){
-    for (var i = 0; i < idArray.length; i++) {
-      request.get(stubhub.url+"/api/experiences?category="+idArray[i])
+
+  for (var i = 0; i < idArray.length; i++) {
+    promises.push(new Promise(function(resolve, reject){
+      request.get(stubhub.url+"/search/catalog/events/v3?categoryId="+idArray[i])
       .set("Authorization", "Bearer "+stubhub.api_key)
       .end(function(err, res){
         if(err) {
+          console.warn(err);
           return reject(err);
         } else {
           // add events from per GET request to results array
-          for (var i=1; i<res.body.data.length; i++) {
-            var event = res.body.event[i];
+          for (var i=0; i<4; i++) {
+            console.log(i);
+            var event = res.body.events[i];
             if (event.status === "Active" && event.geos[1].name === "United States") {
               results.push(
                 {
@@ -134,18 +135,35 @@ var searchStubhub = function(categoryArray) {
                   excerpt: event.description,
                   description: "",
                   city: event.geos[3].name
-                })
+                });
               }
             }
           }
-        });
-      }
-    });
+          resolve(results)
+        })
+      }))
+    }
+    return Promise.all(promises).then(function(results) {
+      finalResults = results
+    })
+
+    return finalResults;
   }
 
   module.exports = {
+
     search: function (categoryArray) {
-      return searchXola(categoryArray);
+      var results;
+      return new Promise(searchXola(categoryArray).then(function(xolaRes){
+        results = xolaRes
+        return searchStubhub(categoryArray).then(function(stubhubRes) {
+          results = results.concat(stubhubRes);
+        })
+      }, function(err) {
+        console.log(err);
+      }))
+      // console.log(promises);
+      // return promises;
     }
   }
 
