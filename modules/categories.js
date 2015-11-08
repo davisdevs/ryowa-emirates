@@ -61,7 +61,6 @@ module.exports = {
   },
 
   getXolaSearchCategory: function(appCategory) {
-    console.log(appCategory);
     if (categories[appCategory]) {
       return categories[appCategory].xola
     } else {

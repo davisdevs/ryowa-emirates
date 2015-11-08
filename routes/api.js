@@ -23,16 +23,25 @@ router.get('/events', function(req, res) {
     categoryArray[i] = decodeURIComponent(categoryArray[i]);
   }
   console.log("Searching for: " + categoryArray);
-  new Promise(function(resolve, reject) {
-    resolve(events.search(categoryArray));
-  }).then(function(data) {
-    // console.log(data);
-    res.json(JSON.stringify({
+  events.searchXola(categoryArray).then(function(data){
+    res.json({
       message: "Event Results",
       data: data
-    }));
-
+    })
   })
+  // Promise.all([
+  //   events.searchXo(categoryArray),
+  //   events.searchStubhub(categoryArray)
+  // ]).spread(function(xolaEvents, stubhubEvents) {
+  //   console.log(xolaEvents);
+  //
+  //   res.json(JSON.stringify({
+  //     message: "Event Results",
+  //     data: data
+  //   }));
+  // }).catch(function(err) {
+  //   console.log(err);
+  // })
 });
 
 module.exports = router;

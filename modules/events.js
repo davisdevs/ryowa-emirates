@@ -55,7 +55,7 @@ var searchXola = function(categoryArray) {
 
             var countryCode = "";
             var city = "";
-            // setTimeout(function() {
+            /* setTimeout(function() {
             //   geocoder.reverse({lat: lat, lon: lon}, function(err, res){
             //     if (err) {
             //       console.warn("Geocoding failed: "+ err)
@@ -67,7 +67,8 @@ var searchXola = function(categoryArray) {
             // }, 2500)
 
             //swap out cause reverse geocoding is removed
-            // if (event.complete === true && countryCode === "US") {
+            // if (event.complete === true && countryCode === "US"){
+            */
             if (event.complete === true) {
               resultsArray.push({"provider": "xola",
               id: event.id,
@@ -80,14 +81,13 @@ var searchXola = function(categoryArray) {
               excerpt: event.excerpt,
               description: event.desc,
               city: city })
-
             }
-          }
+          //}
         }
-      }
+      } //end of for loop
       console.log(resultsArray.length);
       resolve(resultsArray);
-    })
+    }})
   })
 }
 
@@ -151,7 +151,8 @@ var searchStubhub = function(categoryArray) {
   }
 
   module.exports = {
-
+    searchXola : searchXola,
+    searchStubhub : searchStubhub,
     search: function (categoryArray) {
       var results;
       return new Promise(searchXola(categoryArray).then(function(xolaRes){
