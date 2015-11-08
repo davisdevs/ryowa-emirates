@@ -1,17 +1,16 @@
-/* CSS Stylesheet for SummaryView */  /*body {
+/*body {
     font-family: Avenir;
 	background-image: url(/images/scribble_light.png);
 }
-
-header .intro-text {
-	font-size: 30px;
+*/
+.intro-text {
+	font-size: 14px;
 	text-align: center;
-	padding: 70px;
-	margin-top: 30px;
+	padding: 30px;
 	background-color: #ec5e2f;
 	color: white;
 	width: auto;
-}*/
+}
 
 #wrapper {
 	width: 90%;
