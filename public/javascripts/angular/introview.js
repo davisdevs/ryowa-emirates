@@ -1,7 +1,7 @@
 /*jslint white:true */
 /*global angular */
 
-var app = angular.module("myApp", []);
+var app = angular.module("categoryPageApp", []);
 app.controller("ItemCtrl", function ($scope, $http) {
 	"use strict";
 	$http.get("http://localhost:3000/api/events/categories")
