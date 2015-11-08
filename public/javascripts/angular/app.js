@@ -344,3 +344,7 @@ app.controller('cityController', ['$scope', function ($scope) {
 		/*	{ name: "Atlantic City", num:"7 Events",  pricing: "Flights from $376", img:""} */
 	];
 }]);
+
+app.controller('mainController', ['$scope', function($scope){
+	$scope.currentPage = 0;
+}]);

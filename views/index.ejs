@@ -47,27 +47,27 @@
 <div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
 <% } %>-->
 
-  <!--<div class="main-div" ng-controller="MainController">
-    <form id="form-tag-id" novalidate>
-      <p class="text-form">I am {{name}}
-      <div class="green-color">
-        Name:
-        <input placeholder="" class="input-amount" type="text" data-ng-model="name">
-      </div>
-    </form>
-    <div >
-      <p></p>
+<!--<div class="main-div" ng-controller="MainController">
+  <form id="form-tag-id" novalidate>
+    <p class="text-form">I am {{name}}
+    <div class="green-color">
+      Name:
+      <input placeholder="" class="input-amount" type="text" data-ng-model="name">
     </div>
+  </form>
+  <div >
+    <p></p>
+  </div>
 
-  </div> -->
+</div> -->
 <div ng-app="driftApp">
-
+  <div class="main-container" ng-controller="mainController">
   <div class="page-header">
     <div class="drift-logo">
       DRIFT
     </div>
     <div class="user-profile">profile</div>
-    <div class="drift-cart">cart</div>
+    <div class="drift-cart animated" ng-click="currentPage = 3">driftcart<span class="badge">{{}}</span></div>
   </div>
 
 
@@ -80,143 +80,130 @@
         </div>
     </nav>
   -->
-  <!-- Category view -->
-
-  <!-- Page Header -->
+    <!-- Page Header -->
     <header>
-      <div class="header-container">
-    </div>
+      <div class="header-container" ng-show="currentPage === 0" ng-click="currentPage = 1" ng-class="{'fadeOut': true}">
+      </div>
     </header>
-  <!-- Page Content -->
-  <!-- Categories Row View, display 4 max -->
-  <!-- Individual item template -->
+    <!-- Page Content -->
+    <!-- Categories Row View, display 4 max -->
+    <!-- Individual item template -->
+    <div class="page1-container" ng-show="currentPage === 1">
 
-  <div class="main_block" align="center" ng-controller="ItemCtrl">
+      <!-- Category view -->
+      <div class="main_block" align="center" ng-controller="ItemCtrl" >
 
-    <div ng-repeat="category in categories" class="category">
-      <div class="darken" ng-click="selected_cats($index)" ng-class="{'selected_darken':category.include}">
-        <img ng-src="{{category.path}}">
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Submit Button -->
-  <div class="submit" align="center" ng-click="next_button_click()">
-    <button type="submit" class="next-button" >Next</button>
-  </div>
-  <br>
-
-
-
-  <!-- Suggestions View -->
-
-  <div ng-controller="SuggestionsViewController as suggestionsCtrl" class="container-fluid suggestions-container">
-    <!-- Suggestions header -->
-    <div class="row suggestions-header">
-      <div class="tab-buttons-group">
-        <div class="all-button tab-button" ng-click="tabPressed(1)" ng-class="{'tab-selected': currentTab == 1}">Events and Activities</div>
-        <div class="events-button tab-button" ng-click="tabPressed(2)" ng-class="{'tab-selected': currentTab == 2}">Events</div>
-        <div class="activities-button tab-button" ng-click="tabPressed(3)" ng-class="{'tab-selected': currentTab == 3}">Activities</div>
-      </div>
-    </div>
-
-    <!-- Modal view -->
-    <div class="suggestion-container-scope" ng-controller="SuggestionsModalController">
-      <div class="suggestion-modal-container">
-        <div class="suggestion-modal-cross animated fadeInDown" ng-click="closeModal()" ng-show="isModalVisible">
-          <img src="../assets/modal-cross.png"/>
-        </div>
-        <div class="suggestion-modal animated fadeIn" ng-show="isModalVisible">
-          <img class="suggestion-modal-img" src="{{data.img}}"/>
-          <div class="suggestion-modal-content">
-            <h3><b>{{data.title}}</b></h3>
-            <h4>{{data.date}}</h4>
-            <img class="suggestion-modal-drift-button" ng-click="saveButtonClicked()" ng-src="{{driftSaveButtonUrl}}"/>
-            <p>{{data.text}}</p>
+        <div ng-repeat="category in categories" class="category">
+          <div class="darken" ng-click="selected_cats($index)" ng-class="{'selected_darken':category.include}">
+            <img ng-src="{{category.path}}">
           </div>
         </div>
+
       </div>
+      <!-- Submit Button -->
+      <div class="submit" align="center" ng-click="next_button_click()">
+        <button type="submit" class="next-button" ng-click="currentPage = 2">Next</button>
+      </div>
+      <br>
+    </div>
 
-      <div class="suggestion-modal-overlay animated fadeIn" ng-show="isModalVisible"></div>
 
-    <div class="row">
-      <!-- City nav bar -->
-      <div class="city-nav-bar">
-        <div ng-repeat="city in cities">
-          <div class="city-button">{{city}}</div>
+
+    <!-- Suggestions View -->
+
+    <div ng-controller="SuggestionsViewController as suggestionsCtrl" class="container-fluid suggestions-container" ng-show="currentPage==2">
+      <!-- Suggestions header -->
+      <div class="row suggestions-header">
+        <div class="tab-buttons-group">
+          <div class="all-button tab-button" ng-click="tabPressed(1)" ng-class="{'tab-selected': currentTab == 1}">Events and Activities</div>
+          <div class="events-button tab-button" ng-click="tabPressed(2)" ng-class="{'tab-selected': currentTab == 2}">Events</div>
+          <div class="activities-button tab-button" ng-click="tabPressed(3)" ng-class="{'tab-selected': currentTab == 3}">Activities</div>
         </div>
       </div>
 
-      <!-- Gallery-->
-      <div class="suggestion-gallery">
-
-        <div class="all-tab-content" ng-show="currentTab == 1">
-          <div ng-repeat="suggestion in suggestions" class="suggestion-element" ng-click="showModal(suggestion)" ng-style="{'background-image':'url({{suggestion.img}})', 'background-size': 'cover'}">
-            <img ng-show="suggestion" class="suggestion-element-drift" src="../assets/suggestion-element-drift.png"/>
-            <div class="suggestion-element-container">
-              <h4>{{suggestion.title}}</h4>
-              <h5>{{suggestion.date}}</h5>
+      <!-- Modal view -->
+      <div class="suggestion-container-scope" ng-controller="SuggestionsModalController">
+        <div class="suggestion-modal-container">
+          <div class="suggestion-modal-cross animated fadeInDown" ng-click="closeModal()" ng-show="isModalVisible">
+            <img src="../assets/modal-cross.png"/>
+          </div>
+          <div class="suggestion-modal animated fadeIn" ng-show="isModalVisible">
+            <img class="suggestion-modal-img" src="{{data.img}}"/>
+            <div class="suggestion-modal-content">
+              <h3><b>{{data.title}}</b></h3>
+              <h4>{{data.date}}</h4>
+              <img class="suggestion-modal-drift-button" ng-click="saveButtonClicked()" ng-src="{{driftSaveButtonUrl}}"/>
+              <p>{{data.text}}</p>
             </div>
-            <div class="suggestion-element-overlay"></div>
           </div>
         </div>
-        <div class="timed-tab-content" ng-show="currentTab == 2">
-          Timed tab content
-        </div>
-        <div class="free-tab-content" ng-show="currentTab == 3">
-          Free tab content
-        </div>
+
+        <div class="suggestion-modal-overlay animated fadeIn" ng-show="isModalVisible"></div>
+
+        <div class="row">
+          <!-- City nav bar -->
+          <div class="city-nav-bar">
+            <div ng-repeat="city in cities">
+              <div class="city-button">{{city}}</div>
+            </div>
+          </div>
+
+          <!-- Gallery-->
+          <div class="suggestion-gallery">
+
+            <div class="all-tab-content" ng-show="currentTab === 1">
+              <div ng-repeat="suggestion in suggestions" class="suggestion-element" ng-click="showModal(suggestion)" ng-style="{'background-image':'url({{suggestion.img}})', 'background-size': 'cover'}">
+                <img ng-show="suggestion" class="suggestion-element-drift" src="../assets/suggestion-element-drift.png"/>
+                <div class="suggestion-element-container">
+                  <h4>{{suggestion.title}}</h4>
+                  <h5>{{suggestion.date}}</h5>
+                </div>
+                <div class="suggestion-element-overlay"></div>
+              </div>
+            </div>
+            <div class="timed-tab-content" ng-show="currentTab === 2">
+              Timed tab content
+            </div>
+            <div class="free-tab-content" ng-show="currentTab === 3">
+              Free tab content
+            </div>
 
 
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
 
-  </div>
-  <!-- Summary page -->
-  <div class="intro-text">
-     Summary of Your Experiences
-  </div>
-  <div id="wrapper">
-    <div id="columns" ng-controller="cityController">
-      <div ng-repeat="city in cities">
-        <div class="pin">
-          <div class="item_wrapper">
-            <img ng-src="../assets/{{city.img}}.png" style="width:100%; height:auto">
-            <section>
-              <div id="one">
-                <span> {{city.name}} </span><br>
-                <span> {{city.num}} </span>
+    </div>
+    <!-- Summary page -->
+    <div class="pageThree-container" ng-show="currentPage === 3">
+      <div class="intro-text">
+        Summary of Your Experiences
+      </div>
+      <div id="wrapper">
+        <div id="columns" ng-controller="cityController">
+          <div ng-repeat="city in cities">
+            <div class="pin">
+              <div class="item_wrapper">
+                <img ng-src="../assets/{{city.img}}.png" style="width:100%; height:auto">
+                <section>
+                  <div id="one">
+                    <span> {{city.name}} </span><br>
+                    <span> {{city.num}} </span>
+                  </div>
+                  <div id="two">
+                    <span> {{city.pricing}} </span><br>
+                  </div>
+                </section>
               </div>
-              <div id="two">
-                <span> {{city.pricing}} </span><br>
-              </div>
-            </section>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
 </body>
 
-<!-- Summary View -->
 
-
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="bottom">
-      <br>
-      <br>
-      <div align="center">
-        <p>Copyright &copy; Drift 2015</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
 </html>

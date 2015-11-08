@@ -15,7 +15,7 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    font: Lato;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 header .intro-text {
@@ -35,7 +35,6 @@ header .intro-text {
 }
 
 footer {
-    padding: 15px;
     color: white;
     font-size: 15px;
     background-color: rgb(236,94,47);
@@ -69,9 +68,6 @@ footer {
 
 .category {
     border: 0px solid black;
-    padding: 5px;
-    margin-top: 0px;
-    margin-bottom: 0px;
     width: 300px;
     position: relative;
     display: inline-block;
