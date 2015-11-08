@@ -6,6 +6,8 @@
 
 body {
     font-family: Avenir;
+    margin: 0px;
+    padding: 0px;
 }
 
 header {
@@ -22,22 +24,39 @@ header {
 }
 
 header .intro-text {
-    padding: 150px;
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 .portfolio-item {
-    margin-bottom: 10px;
-  
+    margin-bottom: 0px;
 }
 
 footer {
-    margin: 100px;
-    color: black;
+    padding: 50px;
+    color: white;
+    font-size: 24px;
+    background-color: orangered;
     text-align: center;
 }
 
 submit {
-    margin: 50px;
-    text-align: center;
-    color: black;
+    background-color: orangered;
+    color: white;
+}
+
+
+.image {
+    background: url('http://www.adweek.com/socialtimes/files/2013/07/sports-balls.png');
+    width: 100px;
+    height: 200px;
+    position:relative;
+}
+.image:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    transition: all 0.2s;
 }
