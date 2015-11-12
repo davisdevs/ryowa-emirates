@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var events = require("../modules/events");
 var categories = require("../modules/categories");
+var Promise = require("bluebird");
 
 /* GET list of all categories with name and id*/
 router.get('/events/categories', function(req, res) {
@@ -23,24 +24,16 @@ router.get('/events', function(req, res) {
     categoryArray[i] = decodeURIComponent(categoryArray[i]);
   }
   console.log("Searching for: " + categoryArray);
-  events.searchXola(categoryArray).then(function(data){
-    res.json({
-      message: "Event Results",
-      data: data
-    })
-  })
-  // Promise.all([
-  //   events.searchXo(categoryArray),
-  //   events.searchStubhub(categoryArray)
-  // ]).spread(function(xolaEvents, stubhubEvents) {
-  //   console.log(xolaEvents);
-  //
-  //   res.json(JSON.stringify({
+  console.log(events.search(categoryArray))
+  // Promise.all(events.search(categoryArray)).spread(function(array1, array2){
+  //   var array = array1.concat(array2);
+  //   var payload = ({
   //     message: "Event Results",
-  //     data: data
-  //   }));
+  //     data: array
+  //   })
+  //   res.json(payload)
   // }).catch(function(err) {
-  //   console.log(err);
+  //   console.warn(err);
   // })
 });
 

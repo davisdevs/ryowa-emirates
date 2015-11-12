@@ -1,6 +1,6 @@
 var categories = {
   "Arts & Architecture": {
-    "xola": ["Art & Architecture","Creative Classes",]
+    xola: ["Art & Architecture","Creative Classes",]
   },
   "Concerts": {
     "stubhub": "1"
@@ -9,7 +9,7 @@ var categories = {
     "xola": ["Archaeology","Culture & History",]
   },
   "Food": {
-    "xola": ["Beer Tour","Food & Wine",]
+    xola: ["Beer Tour","Food & Wine",]
   },
   "Festival": {
     "xola": ["Film Screening","Music/Rafting festival",]
@@ -77,12 +77,15 @@ module.exports = {
   },
 
   getAppCategory: function(searchCategory) {
-    for(appCategory in category) {
-      if (appCategory.stubhub === searchCategory || appCategory.xola === searchCategory) {
+    for(appCategory in categories) {
+      if (categories[appCategory].stubhub === searchCategory) {
         return appCategory;
-      } else {
-        console.warn("getAppCategory failed: " + searchCategory)
+      } else if (categories[appCategory].xola) {
+        if (categories[appCategory].xola.indexOf(searchCategory) > -1) {
+          return appCategory;
+        }
       }
     }
+    console.warn("getAppCategory failed: " + searchCategory)
   }
 }
