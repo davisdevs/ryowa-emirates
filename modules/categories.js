@@ -1,6 +1,6 @@
 var categories = {
   "Arts & Architecture": {
-    xola: ["Art & Architecture","Creative Classes",]
+    "xola": ["Art & Architecture","Creative Classes",]
   },
   "Concerts": {
     "stubhub": "1"
@@ -9,7 +9,7 @@ var categories = {
     "xola": ["Archaeology","Culture & History",]
   },
   "Food": {
-    xola: ["Beer Tour","Food & Wine",]
+    "xola": ["Beer Tour","Food & Wine",]
   },
   "Festival": {
     "xola": ["Film Screening","Music/Rafting festival",]

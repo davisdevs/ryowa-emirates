@@ -24,7 +24,13 @@ router.get('/events', function(req, res) {
     categoryArray[i] = decodeURIComponent(categoryArray[i]);
   }
   console.log("Searching for: " + categoryArray);
-  console.log(events.search(categoryArray))
+  events.search(categoryArray).then(function(searchResults) {
+    var payload = ({
+      message: 'Event Results',
+      data: searchResults
+    })
+    res.json(payload)
+  })
   // Promise.all(events.search(categoryArray)).spread(function(array1, array2){
   //   var array = array1.concat(array2);
   //   var payload = ({

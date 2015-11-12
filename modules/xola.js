@@ -28,16 +28,20 @@ var geocoder = require('node-geocoder')(geocoderProvider, httpAdapter, extra);
 var searchXola = function(categoryArray) {
   var resultsArray = []
   var query = buildQueryString(categoryArray);
-  searchXolaApi(query)
-  // reverse geocode for city data and memoise it
-  .then(function(responseArray) {
-    return sanitizeResponses(responseArray)
+  return new Promise(function(resolve, reject){
+    searchXolaApi(query)
+    // reverse geocode for city data and memoise it
+    .then(function(responseArray) {
+      return sanitizeResponses(responseArray)
+    })
+    .then(function(sanitizedArray) {
+      resolve(sanitizedArray);
+    })
+    .catch(function(err) {
+      console.log(new Error(err))
+      reject(err)
+    })
   })
-  .catch(function(err) {
-    console.log(new Error(err))
-  })
-
-
 }
 
 var searchXolaApi = function (query) {
@@ -113,7 +117,8 @@ var searchXolaApi = function (query) {
             // TODO: update city property if lat/lon changes
             // return saved entry
             console.log("FOUND WOW");
-            resolve(xolaEntry)
+            event.city = xolaEntry.city
+            resolve(event)
           }
         }) // end of findOne()
       }
@@ -182,7 +187,3 @@ var searchXolaApi = function (query) {
   module.exports = {
     searchXola : searchXola
   }
-
-  // var stubhubSearch = new Promise (function(resolve, reject) {
-  //   resolve(searchStubhub(categoryArray));
-  // })
