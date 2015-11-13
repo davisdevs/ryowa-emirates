@@ -45,7 +45,7 @@ var searchXola = function(categoryArray) {
 }
 
 var searchXolaApi = function (query) {
-  var get_url = xola.url+"/api/experiences?category="+query+"&limit=10";
+  var get_url = xola.url+"/api/experiences?category="+query+"&limit=30";
   return new Promise(function(resolve, reject){
     request.get(get_url)
     .set("X-API-KEY", xola.api_key)
@@ -60,8 +60,8 @@ var searchXolaApi = function (query) {
 
   var sanitizeResponses = function(responseArray){
     var sanitizedArray = [];
-    sanitizedArray.addEvent = function(event) {
-      this.push({"provider": "xola",
+    var addEvent = function(event) {
+      sanitizedArray.push({"provider": "xola",
       id: event.id,
       category: categories.getAppCategory(event.category),
       title: event.name,
@@ -73,6 +73,7 @@ var searchXolaApi = function (query) {
       description: event.desc,
       city: event.city })
     }
+
     // map sanitizeSingle to remaining response
     return Promise.all(responseArray.map(function(response) {
       return sanitizeSingle(response);
@@ -80,7 +81,7 @@ var searchXolaApi = function (query) {
       cleanedResponse.forEach(function(event) {
         if (event !== false) {
           try {
-            sanitizedArray.addEvent(event)
+            addEvent(event)
           } catch(err) {
             console.log(err.stack, event);
           }
@@ -116,7 +117,6 @@ var searchXolaApi = function (query) {
           } else {
             // TODO: update city property if lat/lon changes
             // return saved entry
-            console.log("FOUND WOW");
             event.city = xolaEntry.city
             resolve(event)
           }

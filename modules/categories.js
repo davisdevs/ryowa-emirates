@@ -3,7 +3,7 @@ var categories = {
     "xola": ["Art & Architecture","Creative Classes",]
   },
   "Concerts": {
-    "stubhub": "1"
+    "stubhub": 1
   },
   "Culture & History": {
     "xola": ["Archaeology","Culture & History",]
@@ -15,7 +15,7 @@ var categories = {
     "xola": ["Film Screening","Music/Rafting festival",]
   },
   "Live Sports": {
-    "stubhub": "28"
+    "stubhub": 28
   },
   "Outdoor & Nature": {
     "xola": ["Action Sports Training","Aerial Tours","Backpacking/Camping",
@@ -39,7 +39,7 @@ var categories = {
     "xola": ["Tourism & Technology Summit","Website Creation"]
   },
   "Theatre & Comedy": {
-    "stubhub": "174"
+    "stubhub": 174
   },
   "Volunteering": {
     "xola": ["Volunteering"]

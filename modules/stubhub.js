@@ -6,39 +6,35 @@ var categories = require("../modules/categories");
 
 var searchStubhub = function(categoryArray) {
   var promises = [];
-  var results =[];
   var query = "";
   var idArray = []
   var id;
   // look up category module for list of other categories to search
-  for (var i=0; i<categoryArray.length; i++) {
-    id = categories.getStubhubSearchCategory(categoryArray[i]);
-    if (typeof id === "undefined") {
-      continue;
-    } else {
-      idArray.push(id);
-    }
-  }
+  idArray = categoryArray.map(function(category) {
+    return categories.getStubhubSearchCategory(category)
+  })
+
   console.log("Searching sh: " + idArray);
 
-  for (var i = 0; i < idArray.length; i++) {
-    promises.push(new Promise(function(resolve, reject){
-      request.get(stubhub.url+"/search/catalog/events/v3?categoryId="+idArray[i])
+  return Promise.all(idArray.map(function(id) {
+    return new Promise(function(resolve, reject) {
+      request.get(stubhub.url+"/search/catalog/events/v3?categoryId="+id)
       .set("Authorization", "Bearer "+stubhub.api_key)
       .end(function(err, res){
         if(err) {
           console.warn(err);
-          return reject(err);
+          reject(err);
         } else {
+          var responseArray = [];
           // add events from per GET request to results array
-          for (var i=0; i<res.body.length; i++) {
+          for (var i=0; i<res.body.events.length; i++) {
             var event = res.body.events[i];
             if (event.status === "Active" && event.geos[1].name === "United States") {
-              results.push(
+              responseArray.push(
                 {
                   provider: "stubhub",
                   id: event.id,
-                  category: event.categories[1].name, //original xola category TODO: Implement lookup in category (interest) module
+                  category: categories.getAppCategory(event.categories[1].id),
                   title: event.name,
                   image: event.imageUrl,
                   date: event.eventDateUTC,
@@ -50,15 +46,11 @@ var searchStubhub = function(categoryArray) {
                 });
               }
             } // end of inner loop
-            console.log("sh : " + results.length);
-            resolve(results)
+            resolve(responseArray)
           }
         })
-      }))
-      // console.log(promises);
-    }// end of outer loop
-
-    return promises;
+      })
+    }))
   }
 
   module.exports = {
